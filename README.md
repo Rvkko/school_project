@@ -1,64 +1,70 @@
-**ECommerce Management System**
-
-
+# 🛒 E-Commerce Management System
 
 This is a simple Java-based e-commerce management system developed for a school project. It demonstrates essential programming concepts, including object-oriented design, user interaction, and dynamic data handling.
 
-**📁 Files Overview**
+---
+
+## 📁 Files Overview
 
 The main file for the project contains:
 
-**Product Class:** Represents a product with attributes like name, ID, and price.
+- **Product Class:** Represents a product with attributes like name, ID, and price.
+- **Interactive System Logic:** Allows users to add, retrieve, and manage product details.
+- **Console-Based Interface:** Facilitates user interaction.
 
-**Interactive System Logic:** Allows users to add, retrieve, and manage product details.
+---
 
-**Console-Based Interface:** Facilitates user interaction.
+## ✨ Features
 
-**✨ Features**
+- **Product Management:** Add, view, and manage products by name, ID, and price.
+- **Interactive Console:** Provides a user-friendly text-based interface.
+- **Dynamic Data Storage:** Uses an `ArrayList` to manage products efficiently.
+- **Object-Oriented Design:** Encapsulates product details and logic in reusable classes.
 
-**Product Management:** Add, view, and manage products by name, ID, and price.
+---
 
-**Interactive Console:** Provides a user-friendly text-based interface.
+## 🔧 Setup and Installation
 
-**Dynamic Data Storage:** Uses an ArrayList to manage products efficiently.
+### **Install Java**
+Ensure Java is installed on your system by checking the version:
+```bash
+java -version
+```
 
-**Object-Oriented Design:** Encapsulates product details and logic in reusable classes.
+### **Compile the Program**
+Compile the Java file using:
+```bash
+javac ECommerce.java
+```
 
-**🔧 Setup and Installation**
+### **Run the Program**
+Run the compiled program:
+```bash
+java ECommerce
+```
 
-**Install Java:**
+---
 
- - java -version
-
-**Compile the Program:**
-
- - java ECommerce.java
-
-**Run the Program:**
-
-- java ECommerce
-
-**🎮 How to Use**
+## 🎮 How to Use
 
 1. Launch the program in your terminal.
-  
 2. Follow the prompts to:
+   - **Add Products:** Enter product name, ID, and price.
+   - **View Product Details:** Retrieve details by name or ID.
+   - **Exit the Program:** End your session when done.
 
-- Add products by entering their name, ID, and price.
+---
 
-- View product details using their name or ID.
+## 🛠️ Technologies Used
 
-- Exit the program when done.
+- **Java:** The programming language used.
+- **Scanner:** For user input.
+- **ArrayList:** For storing and managing product data dynamically.
 
-**🛠️ Technologies Used**
+---
 
-- Java: The programming language I used.
+## 🌐 Run Online
 
-- Scanner: For user input.
+If you'd like to run this code directly in your browser, click the link below :)
 
-- ArrayList: For storing and managing product data dynamically.
-  
-
-**If you want to simply run this code on you're browser; Select the link below :)**
-
-- https://onlinegdb.com/HQyTn_dhE-
+https://onlinegdb.com/HQyTn_dhE-
