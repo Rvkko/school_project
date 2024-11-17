@@ -45,7 +45,7 @@ java ECommerce
 
 ---
 
-## 🎮 How to Use
+## How to Use
 
 1. Launch the program in your terminal.
 2. Follow the prompts to:
