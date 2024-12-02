@@ -107,10 +107,82 @@
         </div>
     </main>
     <footer>
-        <p>Contact Us!</p>
-        <p>Phone Number: (954) 584-9544 | (305) 254-0048</p>
-        <p>Social Media: <a href="https://www.instagram.com/horizgreen/">https://www.instagram.com/horizgreen/</a></p>
-        <p>&copy; 2024 Green Horizons Landscape & Maintenance, Inc.</p>
-    </footer>
-</body>
+        <section>
+          <h2>Send Us a Message</h2>
+          <p>Contact us using the form below or reach out directly:</p>
+          <p>
+            <strong>Phone Number:</strong> (954) 584-9544 | (305) 254-0048<br>
+            <strong>Email:</strong>
+            <a href="mailto:info@greenhorizons.com">info@greenhorizons.com</a><br>
+            <strong>Social Media:</strong><a href="https://www.instagram.com/horizgreen/">https://www.instagram.com/horizgreen/</a>
+          </p>
+      
+          <!-- Subscribe Button -->
+          <button id="subscribeButton" style="
+            margin-top: 20px; 
+            padding: 10px 20px; 
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer;
+          ">
+            Subscribe
+          </button>
+      
+          <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <br><br>
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+      </footer>
+      
+      <script>
+        // Enhanced Form Submission Script
+        const form = document.getElementById('contactForm');
+        const subscribeButton = document.getElementById('subscribeButton');
+      
+        if (form) {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+      
+            // Capture and trim input values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+      
+            // Validate fields
+            if (!name || !email || !message) {
+              alert('Please fill in all fields before submitting the form.');
+              return;
+            }
+      
+            // Custom alert message upon submission
+            alert(`Thank you, ${name}! We have received your message and will contact you at ${email} soon.`);
+      
+            // Optional: Clear form fields after submission
+            form.reset();
+          });
+        }
+      
+        // Subscribe Button Alert
+        if (subscribeButton) {
+          subscribeButton.addEventListener('click', () => {
+            alert('Thank you for subscribing to Green Horizons Landscape & Maintenance updates!');
+          });
+        }
+      </script>
+      
+    </body>
+    
+    
 </html>

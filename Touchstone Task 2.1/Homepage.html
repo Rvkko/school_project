@@ -82,9 +82,20 @@
     </main>
     <footer>
         <p>Contact Us!</p>
+        <a href="#">Subdcribe to Our Newsletter</a>
         <p>Phone Number: (954) 584-9544 | (305) 254-0048</p>
         <p>Social Media: <a href="https://www.instagram.com/horizgreen/">https://www.instagram.com/horizgreen/</a></p>
         <p>&copy; 2024 Green Horizons Landscape & Maintenance, Inc.</p>
     </footer>
-</body>
+
+    <script>
+        // Subscribe alert
+        document.querySelectorAll('footer a').forEach(subscribe => {
+            subscribe.addEventListener('click', () => {
+                alert('Thank you for subscribing');
+            });
+        });
+    </script>
+    </body>
+    
 </html>

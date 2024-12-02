@@ -24,6 +24,35 @@
             max-width: 100%;
             border-radius: 5px;
         }
+        /* Styles for the cart display */
+        #cart-display {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #F9F9F9;
+            border-radius: 5px;
+        }
+        #cart-display ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #cart-display li {
+            margin-bottom: 10px;
+        }
+        .buttons {
+            text-align: center;
+            margin: 20px;
+        }
+        .buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            font-size: 16px;
+        }
         footer {
             text-align: center;
             padding: 10px;
@@ -46,38 +75,133 @@
     </header>
     <main>
         <div class="grid-container">
-            <!-- Left Column -->
+            <!-- Gallery Items -->
             <div class="grid-item">
-                <h3>Modern Lawn Design</h3>
-                <img src="https://via.placeholder.com/300x200" alt="Modern Lawn Design">
+                <h3>Modern Lawnmower</h3>
+                <img src="https://via.placeholder.com/300x200" alt="Modern Lawnmower">
+                <button>Add to Cart</button>
             </div>
             <div class="grid-item">
-                <h3>Custom Water Features</h3>
-                <img src="https://via.placeholder.com/300x200" alt="Custom Water Features">
+                <h3>Custom Water Hose</h3>
+                <img src="https://via.placeholder.com/300x200" alt="Custom Water Hose">
+                <button>Add to Cart</button>
             </div>
             <div class="grid-item">
-                <h3>Community Projects</h3>
-                <img src="https://via.placeholder.com/300x200" alt="Community Projects">
+                <h3>Community Favorites</h3>
+                <img src="https://via.placeholder.com/300x200" alt="Community Favorites">
+                <button>Add to Cart</button>
             </div>
             <div class="grid-item">
                 <h3>Eco-Friendly Landscaping</h3>
                 <img src="https://via.placeholder.com/300x200" alt="Eco-Friendly Landscaping">
+                <button>Add to Cart</button>
             </div>
             <div class="grid-item">
-                <h3>Before-and-After Images</h3>
-                <img src="https://via.placeholder.com/300x200" alt="Before-and-After Images">
+                <h3>Greenhouse Installation Services</h3>
+                <img src="https://via.placeholder.com/300x200" alt="Greenhouse Installation Services">
+                <button>Add to Cart</button>
             </div>
             <div class="grid-item">
                 <h3>Seasonal Plant Displays</h3>
                 <img src="https://via.placeholder.com/300x200" alt="Seasonal Plant Displays">
+                <button>Add to Cart</button>
             </div>
+        </div>
+
+        <!-- Cart Display Section -->
+        <div id="cart-display">
+            <h3>Your Cart:</h3>
+            <p>Your cart is empty.</p>
+        </div>
+
+        <div class="buttons">
+            <button id="clear-cart">Clear Cart</button>
+            <button id="process-order">Process Order</button>
         </div>
     </main>
     <footer>
         <p>Contact Us!</p>
+        <a href="#">Subscribe to Our Newsletter</a>
         <p>Phone Number: (954) 584-9544 | (305) 254-0048</p>
         <p>Social Media: <a href="https://www.instagram.com/horizgreen/">https://www.instagram.com/horizgreen/</a></p>
         <p>&copy; 2024 Green Horizons Landscape & Maintenance, Inc.</p>
     </footer>
+
+    <script>
+        // Subscribe alert
+        document.querySelectorAll('footer a').forEach(subscribe => {
+            subscribe.addEventListener('click', () => {
+                alert('Thank you for subscribing');
+            });
+        });
+
+        // Initialize cart as an empty array
+        let cartItems = [];
+
+        // Add to Cart functionality
+        document.querySelectorAll('.grid-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const itemName = button.parentElement.querySelector('h3').innerText;
+                cartItems.push(itemName);
+                alert(`${itemName} added to the cart`);
+                updateCartDisplay();
+            });
+        });
+
+        // Function to update the cart display
+        function updateCartDisplay() {
+            const cartDisplay = document.getElementById('cart-display');
+            cartDisplay.innerHTML = '<h3>Your Cart:</h3>';
+            if (cartItems.length === 0) {
+                cartDisplay.innerHTML += '<p>Your cart is empty.</p>';
+            } else {
+                const ul = document.createElement('ul');
+                cartItems.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.innerText = item;
+                    ul.appendChild(li);
+                });
+                cartDisplay.appendChild(ul);
+            }
+        }
+
+        // Clear Cart functionality
+        document.querySelector('#clear-cart').addEventListener('click', () => {
+            if (cartItems.length > 0) {
+                cartItems = [];
+                alert('Cart cleared');
+                updateCartDisplay();
+            } else {
+                alert('No items to clear');
+            }
+        });
+
+        // Process Order functionality with 2-second delay
+        document.querySelector('#process-order').addEventListener('click', () => {
+            if (cartItems.length > 0) {
+                // Disable the button to prevent multiple clicks
+                document.querySelector('#process-order').disabled = true;
+
+                // Display a processing message (optional)
+                const cartDisplay = document.getElementById('cart-display');
+                cartDisplay.innerHTML += '<p>Processing your order...</p>';
+
+                // Add a 2-second delay before processing the order
+                setTimeout(() => {
+                    alert('Thank you for your order:\n' + cartItems.join('\n'));
+                    cartItems = [];
+                    updateCartDisplay();
+
+                    // Re-enable the button after processing
+                    document.querySelector('#process-order').disabled = false;
+                }, 2000);
+            } else {
+                alert('Cart is empty');
+            }
+        });
+
+        // Initial cart display update
+        updateCartDisplay();
+    </script>
 </body>
 </html>

@@ -70,6 +70,82 @@ button:hover, .cta:hover {
     text-align: left;
 }
 
+/* Contact Form Section */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2E7D32; /* Dark Green to match header/footer */
+    border-radius: 10px;
+    color: white; /* White text for contrast */
+    max-width: 600px;
+    text-align: left;
+}
+
+section h2 {
+    text-align: center;
+    color: #FFFFFF; /* White title */
+    margin-bottom: 20px;
+}
+
+section p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #FFFFFF; /* White text for contact info */
+}
+
+section p strong {
+    color: #A5D6A7; /* Lighter green for emphasis */
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #A5D6A7; /* Light Green */
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical; /* Allows vertical resizing only */
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Light Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1B5E20; /* Darker Green */
+}
+
+/* Adjust Links in Section */
+section a {
+    color: #A5D6A7; /* Light Green for links */
+    text-decoration: underline;
+}
+
+section a:hover {
+    text-decoration: none;
+}
+
+
 .team-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
